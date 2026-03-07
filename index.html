@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="DigitalLab - Agencia de Desarrollo Web y Apps en Villa Mercedes, San Luis. Expertos en React, Menús Digitales y Landings.">
+    <meta name="keywords" content="Diseño web Villa Mercedes, Páginas web San Luis, Menú Digital Villa Mercedes, Programador React San Luis">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="DigitalLab | Desarrollo Web en Villa Mercedes">
+    <meta property="og:description" content="Creamos tu página web, menú digital o app con tecnología de punta en San Luis.">
+    <meta property="og:image" content="img/logo-wsp.png"> <meta property="og:url" content="https://digitallab.com.ar">
+    <title>DigitalLab | Agencia de Desarrollo Web en Villa Mercedes, San Luis</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/x-icon" href="img/logo-barra.webp" loading="lazy">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a;
+            color: #f8fafc;
+        }
+
+        .glass-nav {
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .hero-gradient {
+            background: radial-gradient(circle at top right, #3b82f644, transparent),
+                        radial-gradient(circle at bottom left, #8b5cf644, transparent);
+        }
+
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .card-hover:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.05);
+            border-color: #3b82f6;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            opacity: 0.9;
+            transform: scale(1.02);
+        }
+
+        /* FAQ Estilo Acordeón */
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        /* Estilo para las imágenes del portafolio */
+        .portfolio-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+            transition: transform 0.5s ease;
+        }
+        .card-hover:hover .portfolio-img {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <nav class="glass-nav fixed w-full z-50 top-0 left-0">
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <img src="img/logo-barra.png" alt="DigitalLab Isotipo" class="h-10 w-auto"> <span class="text-2xl font-extrabold tracking-tighter text-white uppercase"></span>
+                    <span class="text-2xl font-extrabold tracking-tighter text-white uppercase">
+                        Digital<span class="text-blue-500">Lab</span>
+                    </span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8 text-sm font-medium text-slate-300">
+                        <a href="#inicio" class="hover:text-blue-400 transition-colors">Inicio</a>
+                        <a href="#proyectos" class="hover:text-blue-400 transition-colors">Portafolio</a>
+                        <a href="#paquetes" class="hover:text-blue-400 transition-colors">Planes</a>
+                        <a href="#testimonios" class="hover:text-blue-400 transition-colors">Testimonios</a>
+                        <a href="#contacto" class="btn-primary px-6 py-2 rounded-full text-white shadow-lg shadow-blue-500/20">Cotizar</a>
+                    </div>
+                </div>
+                <div class="md:hidden text-white" id="menu-btn">
+                    <i class="fas fa-bars text-2xl cursor-pointer"></i>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-b border-slate-800 p-4 space-y-4 text-center">
+            <a href="#inicio" class="block">Inicio</a>
+            <a href="#proyectos" class="block">Portafolio</a>
+            <a href="#paquetes" class="block">Planes</a>
+             <a href="#testimonios" class="block">Testimonios</a>
+            <a href="#contacto" class="block bg-blue-600 py-2 rounded-xl">Cotizar</a>
+        </div>
+    </nav>
+
+    <section id="inicio" class="relative pt-32 pb-20 md:pt-48 md:pb-32 hero-gradient">
+        <div class="max-w-7xl mx-auto px-4 text-center relative z-10">
+            <span class="inline-block px-4 py-1.5 mb-6 text-xs font-bold tracking-widest text-blue-400 uppercase bg-blue-400/10 rounded-full border border-blue-400/20">
+                Diseñamos el futuro hoy
+            </span>
+            <h1 class="text-5xl md:text-7xl font-extrabold mb-8 leading-tight tracking-tight">
+                Convertimos ideas en <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">
+                    Experiencias Digitales
+                </span>
+            </h1>
+            <p class="max-w-2xl mx-auto text-lg text-slate-400 mb-10 leading-relaxed">
+                Agencia de desarrollo web y aplicaciones. Creamos sitios rápidos, seguros y profesionales para comercios y empresas de Villa Mercedes y todo San Luis.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#paquetes" class="btn-primary px-8 py-4 rounded-xl font-bold">Ver Paquetes</a>
+                <a href="#proyectos" class="bg-slate-800 hover:bg-slate-700 px-8 py-4 rounded-xl font-bold border border-slate-700">Proyectos</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="proyectos" class="py-24 bg-slate-900">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4">Trabajos Recientes</h2>
+                <p class="text-slate-400">Soluciones reales para clientes reales.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="card-hover rounded-3xl bg-slate-800 overflow-hidden group">
+                    <div class="aspect-video bg-slate-700 overflow-hidden relative">
+                        <img src="img/optica-la-ribera.webp" alt="Optica La Ribera" class="portfolio-img">
+                        <div class="absolute inset-0 bg-blue-600/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <span class="bg-white text-slate-900 px-4 py-2 rounded-full font-bold text-sm">Ver Sitio Online</span>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-blue-400 text-xs font-bold uppercase">Pack Landing Page</span>
+                            <h3 class="text-2xl font-bold uppercase">La Ribera</h3>
+                        </div>
+                        <a href="https://optica-la-ribera.netlify.app" target="_blank" class="text-slate-400 hover:text-white transition-colors">optica-la-ribera.netlify.app</a>
+                    </div>
+                </div>
+               
+                <div class="card-hover rounded-3xl bg-slate-800 overflow-hidden group">
+                    <div class="aspect-video bg-slate-700 overflow-hidden relative">
+                        <img src="img/transporte-tranmarck.webp" alt="Transporte Marck" class="portfolio-img">
+                        <div class="absolute inset-0 bg-blue-600/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <span class="bg-white text-slate-900 px-4 py-2 rounded-full font-bold text-sm">Ver Sitio Online</span>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-purple-400 text-xs font-bold uppercase">Pack Corporativo</span>
+                            <h3 class="text-2xl font-bold uppercase">Transporte Marck</h3>
+                        </div>
+                        <a href="https://transportemarck.netlify.app" target="_blank" class="text-slate-400 hover:text-white transition-colors">transportemarck.netlify.app</a>
+                    </div>
+                </div>
+
+               <div class="card-hover rounded-3xl bg-slate-800 overflow-hidden group">
+                    <div class="aspect-video bg-slate-700 overflow-hidden relative">
+                        <img src="img/rotiseria-los-milagros.webp" alt="Transporte Marck" class="portfolio-img">
+                        <div class="absolute inset-0 bg-blue-600/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <span class="bg-white text-slate-900 px-4 py-2 rounded-full font-bold text-sm">Ver Sitio Online</span>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-purple-400 text-xs font-bold uppercase">Pack Manu Smart</span>
+                            <h3 class="text-2xl font-bold uppercase">Rotiseria Los Milagros</h3>
+                        </div>
+                        <a href="https://rotiseria-los-milagros.netlify.app" target="_blank" class="text-slate-400 hover:text-white transition-colors">rotiseria-los-milagros.netlify.app</a>
+                    </div>
+                </div>
+
+                <div class="card-hover rounded-3xl bg-slate-800 overflow-hidden group">
+                    <div class="aspect-video bg-slate-700 overflow-hidden relative">
+                        <img src="img/cem-cooperativa.webp" alt="Transporte Marck" class="portfolio-img">
+                        <div class="absolute inset-0 bg-blue-600/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <span class="bg-white text-slate-900 px-4 py-2 rounded-full font-bold text-sm">Ver Sitio Online</span>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-purple-400 text-xs font-bold uppercase">Sistema React</span>
+                            <h3 class="text-2xl font-bold uppercase">Cooperatica CEM</h3>
+                        </div>
+                        <a href="https://coopvmsl.com.ar/" target="_blank" class="text-slate-400 hover:text-white transition-colors">coopvmsl.com.ar/</a>
+                    </div>
+                </div>
+
+                 <div class="card-hover rounded-3xl bg-slate-800 overflow-hidden group">
+                    <div class="aspect-video bg-slate-700 overflow-hidden relative">
+                        <img src="img/fondoFlorDepil.webp" alt="Transporte Marck" class="portfolio-img">
+                        <div class="absolute inset-0 bg-blue-600/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <span class="bg-white text-slate-900 px-4 py-2 rounded-full font-bold text-sm">Ver Sitio Online</span>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-purple-400 text-xs font-bold uppercase">PLAN LANDING PAGE</span>
+                            <h3 class="text-2xl font-bold uppercase">Flor Depil</h3>
+                        </div>
+                        <a href="https://flor-depil.verdel.app" target="_blank" class="text-slate-400 hover:text-white transition-colors">flor-depil.verdel.appflor-depil.verdel.app</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="paquetes" class="py-24 bg-slate-950">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4">Planes para tu Negocio</h2>
+                <p class="text-slate-400">Precios transparentes, sin vueltas.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="p-8 rounded-3xl bg-slate-900 border border-slate-800 hover:border-blue-500 transition-all">
+                    <div class="bg-blue-700 text-white text-[10px] font-bold px-2 py-1 rounded mb-4 w-fit uppercase">pequeños y medianos comercios</div>
+                    <h3 class="text-xl font-bold mb-2">Pack Landing</h3>
+                    <div class="text-4xl font-extrabold mb-6">$ 30000</div>
+                    <ul class="space-y-4 mb-8 text-sm text-slate-400">
+                        <li><i class="fas fa-check text-blue-500 mr-2"></i> Una página profesional</li>
+                        <li><i class="fas fa-check text-blue-500 mr-2"></i> Hosting + SSL incluido</li>
+                        <li><i class="fas fa-check text-blue-500 mr-2"></i> Optimizado para Celulares</li>
+                        <li><i class="fas fa-check text-blue-500 mr-2"></i> Boton de WhatsApp</li>
+                    </ul>
+                    <button onclick="selectPlan('Pack Landing Page')" class="w-full py-3 border border-blue-500 text-blue-500 rounded-xl font-bold hover:bg-blue-500 hover:text-white transition-all">Elegir Plan</button>
+                </div>
+
+                <div class="p-8 rounded-3xl bg-slate-800 border-2 border-blue-500 transform md:-translate-y-4 shadow-2xl shadow-blue-500/10">
+                    <div class="bg-blue-500 text-white text-[10px] font-bold px-2 py-1 rounded mb-4 w-fit uppercase">Ideal Gastronómicos</div>
+                    <h3 class="text-xl font-bold mb-2 uppercase italic">El menú en tu teléfono</h3>
+                    <div class="text-4xl font-extrabold mb-6">$ 35000</div>
+                    <ul class="space-y-4 mb-8 text-sm text-slate-300">
+                        <li><i class="fas fa-check text-blue-500 mr-2"></i> Carta Digital por QR</li>
+                        <li><i class="fas fa-check text-blue-500 mr-2"></i> Pedidos por WhatsApp</li>
+                        <li><i class="fas fa-check text-blue-500 mr-2"></i> Cambio de precios al instante</li>
+                    </ul>
+                    <button onclick="selectPlan('Menú Smart')" class="w-full py-3 btn-primary text-white rounded-xl font-bold">Solicitar Ahora</button>
+                </div>
+
+                <div class="p-8 rounded-3xl bg-slate-900 border border-slate-800 hover:border-purple-500 transition-all">
+                    <div class="bg-purple-500 text-white text-[10px] font-bold px-2 py-1 rounded mb-4 w-fit uppercase">Plan Premium</div>
+                    <h3 class="text-xl font-bold mb-2">Sistemas React</h3>
+                    <div class="text-4xl font-extrabold mb-6">Cotizar</div>
+                    <ul class="space-y-4 mb-8 text-sm text-slate-400">
+                        <li><i class="fas fa-check text-purple-500 mr-2"></i> Aplicaciones Web Complejas</li>
+                        <li><i class="fas fa-check text-purple-500 mr-2"></i> Base de datos / Panel</li>
+                        <li><i class="fas fa-check text-purple-500 mr-2"></i> Alta Escalabilidad</li>
+                    </ul>
+                    <button onclick="selectPlan('Sistema React a Medida')" class="w-full py-3 border border-purple-500 text-purple-500 rounded-xl font-bold hover:bg-purple-500 hover:text-white transition-all">Consultar</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonios" class="py-24 bg-slate-950 hero-gradient">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4">Lo que dicen nuestros clientes</h2>
+                <p class="text-slate-400">La confianza de los negocios de Villa Mercedes es nuestro mayor activo.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="p-8 rounded-3xl bg-slate-900 border border-slate-800 card-hover flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-yellow-500 mb-4">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-slate-300 italic mb-6">"Excelente atención. Necesitábamos una landing para la óptica y captaron la idea enseguida. Muy profesionales y rápidos."</p>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-blue-500/20 rounded-full flex items-center justify-center">
+                            <i class="fas fa-user text-blue-400"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white">Óptica La Ribera</h4>
+                            <p class="text-xs text-slate-500">Villa Mercedes</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-8 rounded-3xl bg-slate-900 border border-slate-800 card-hover flex flex-col justify-between border-blue-500/30">
+                    <div>
+                        <div class="flex text-yellow-500 mb-4">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-slate-300 italic mb-6">"El Menú Smart cambió la forma en que trabajamos. A los clientes les encanta y a nosotros nos facilita actualizar los precios al toque."</p>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-orange-500/20 rounded-full flex items-center justify-center">
+                            <i class="fas fa-utensils text-orange-400"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white">Rotisería Los Milagros</h4>
+                            <p class="text-xs text-slate-500">San Luis</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-8 rounded-3xl bg-slate-900 border border-slate-800 card-hover flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-yellow-500 mb-4">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-slate-300 italic mb-6">"Buscábamos algo profesional y moderno para nuestra presencia digital. DigitalLab superó nuestras expectativas."</p>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-purple-500/20 rounded-full flex items-center justify-center">
+                            <i class="fas fa-handshake text-purple-400"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white">Cooperativa CEM</h4>
+                            <p class="text-xs text-slate-500">Villa Mercedes</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="py-24 bg-slate-900 ">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-4xl font-extrabold mb-6 uppercase tracking-tighter italic">Hablemos</h2>
+                    <p class="text-slate-400 mb-8 text-lg">Tu próxima web se desarrolla acá mismo, en <strong>Villa Mercedes</strong>. Trato directo, sin intermediarios.</p>
+                    <div class="space-y-6">
+                        <a href="https://wa.me/542657780645" target="_blank" class="flex items-center gap-4 group">
+                            <div class="w-12 h-12 bg-green-500/10 rounded-full flex items-center justify-center group-hover:bg-green-500 transition-colors">
+                                <i class="fab fa-whatsapp text-green-500 group-hover:text-white text-xl"></i>
+                            </div>
+                            <span class="font-bold text-lg">2657 780645</span>
+                        </a>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-blue-500/10 rounded-full flex items-center justify-center">
+                                <i class="fas fa-map-marker-alt text-blue-500"></i>
+                            </div>
+                            <span class="font-bold">Villa Mercedes, San Luis</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-800 p-8 rounded-3xl border border-slate-700 shadow-2xl">
+                    <form action="https://formspree.io/f/xbdzryyk" method="POST" id="contactForm" class="space-y-4">
+    
+    <input type="text" name="nombre" placeholder="Tu Nombre o Negocio" required
+           class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 focus:border-blue-500 outline-none transition-all">
+    
+    <textarea name="mensaje" id="form-msg" placeholder="¿Cómo podemos ayudarte?" rows="4" required
+              class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 focus:border-blue-500 outline-none transition-all"></textarea>
+    
+    <button type="submit" class="w-full btn-primary py-4 rounded-xl font-bold text-lg uppercase tracking-widest">
+        Enviar Consulta
+    </button>
+</form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 border-t border-slate-800 text-center bg-slate-950 text-slate-500 text-xs">
+        <p class="mb-2">DigitalLab - Villa Mercedes, San Luis</p>
+        <p>© 2026. Construido con tecnología de alta velocidad.</p>
+    </footer>
+
+    <script>
+        const btn = document.getElementById('menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        btn.onclick = () => menu.classList.toggle('hidden');
+
+        function selectPlan(plan) {
+            const msg = document.getElementById('form-msg');
+            msg.value = `Hola DigitalLab! Me gustaría consultar por el "${plan}".`;
+            document.getElementById('contacto').scrollIntoView({ behavior: 'smooth' });
+            msg.focus();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tu Negocio 24/7 | Digital Lab Estilo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --dl-black: #0a0a0a;
+            --dl-dark: #121212;
+            --dl-accent: #00f2ff; /* Cian vibrante estilo Digital Lab */
+            --dl-gray: #1e1e1e;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+            background-color: var(--dl-black);
+            color: #ffffff;
+        }
+        .text-accent { color: var(--dl-accent); }
+        .bg-accent { background-color: var(--dl-accent); }
+        
+        .hero-gradient {
+            background: radial-gradient(circle at top right, rgba(0, 242, 255, 0.15), transparent),
+                        radial-gradient(circle at bottom left, rgba(0, 242, 255, 0.05), transparent);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .glass-card:hover {
+            border-color: var(--dl-accent);
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .btn-primary {
+            background-color: var(--dl-accent);
+            color: var(--dl-black);
+            font-weight: 800;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-primary:hover {
+            box-shadow: 0 0 20px rgba(0, 242, 255, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .border-dl { border-color: rgba(255, 255, 255, 0.1); }
+    </style>
+</head>
+<body>
+
+    <!-- HERO SECTION -->
+    <section class="hero-gradient min-h-screen flex items-center relative overflow-hidden border-b border-dl">
+        <div class="container mx-auto px-6 py-20 flex flex-col md:flex-row items-center relative z-10">
+            <div class="md:w-3/5 mb-12 md:mb-0">
+                <div class="inline-block px-4 py-1 rounded-full border border-accent text-accent text-xs font-bold mb-6 uppercase tracking-widest">
+                   PACK LANDING
+                </div>
+                <h1 class="text-5xl md:text-7xl font-extrabold leading-tight mb-6">
+                    Tu Negocio Abierto <br>
+                    <span class="text-accent italic">las 24 Horas.</span>
+                </h1>
+                <p class="text-xl md:text-2xl mb-10 text-gray-400 max-w-2xl leading-relaxed">
+                    Diseño exclusivo, hosting incluido y optimizada para vender. <br>
+                    Todo por un pago único de <span class="text-white font-bold">$30.000</span>.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="https://wa.me/542657780645?text=Quiero%20contratar%20el%20pack%20landing" class="btn-primary py-5 px-10 rounded-full text-center"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                        ¡Quiero mi Web Ahora!
+                    </a>
+                </div>
+            </div>
+            
+            <div class="md:w-2/5 relative">
+                <!-- Mockup Estilo Digital Lab -->
+                <div class="relative">
+                    <div class="absolute -inset-4 bg-accent opacity-20 blur-3xl rounded-full"></div>
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800" alt="Dashboard Preview" class="relative rounded-2xl shadow-2xl border border-dl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN QUÉ INCLUYE EL PACK -->
+    <section class="py-24 bg-dark">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+                <div class="md:w-1/2">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-4">¿Qué incluye <span class="text-accent">el Pack?</span></h2>
+                    <p class="text-gray-400 text-lg">Transparencia total para el crecimiento de tu comercio en Villa Mercedes.</p>
+                </div>
+                <div class="h-px bg-dl-gray flex-grow mx-8 hidden md:block"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Card 1 -->
+                <div class="glass-card p-10 rounded-3xl">
+                    <div class="text-accent mb-6">
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Diseño Profesional</h3>
+                    <p class="text-gray-500 leading-relaxed">Interfaz moderna y minimalista adaptada a la estética de tu marca.</p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="glass-card p-10 rounded-3xl">
+                    <div class="text-accent mb-6">
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Hosting + SSL</h3>
+                    <p class="text-gray-500 leading-relaxed">Velocidad de carga optimizada y certificado de seguridad incluido por un año.</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="glass-card p-10 rounded-3xl">
+                    <div class="text-accent mb-6">
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">WhatsApp Directo</h3>
+                    <p class="text-gray-500 leading-relaxed">Botón flotante para que tus clientes te consulten con un solo toque.</p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="glass-card p-10 rounded-3xl">
+                    <div class="text-accent mb-6">
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Mantenimiento</h3>
+                    <p class="text-gray-500 leading-relaxed">Soporte técnico y actualizaciones mensuales por solo $10.000.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN PRUEBA SOCIAL -->
+    <section class="py-24 border-t border-dl">
+        <div class="container mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6 text-white">Sumate a los comercios de Villa Mercedes que ya digitalizaron sus ventas.</h2>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-items-center opacity-40">
+                <span class="text-xl font-black tracking-tighter hover:text-accent transition cursor-default">OPTICA LA RIBERA</span>
+                <span class="text-xl font-black tracking-tighter hover:text-accent transition cursor-default">COOPERATIVA CEM</span>
+                <span class="text-xl font-black tracking-tighter hover:text-accent transition cursor-default">FLOR DEPIL</span>
+                <span class="text-xl font-black tracking-tighter hover:text-accent transition cursor-default">ROTISERIA LOS MILAGROS</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-12 border-t border-dl bg-black">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="text-2xl font-black tracking-tighter">
+                    DIGITAL<span class="text-accent">LAB</span> <span class="font-light text-gray-600 text-sm ml-2">Clone Style</span>
+                </div>
+                <div class="text-gray-500 text-sm text-center">
+                    &copy; 2026 Villa Mercedes, San Luis. <br class="md:hidden"> Impulsando el comercio local.
+                </div>
+                
+            </div>
+        </div>
+    </footer>
+
+   <script type="module">
+  import Typebot from 'https://cdn.jsdelivr.net/npm/@typebot.io/js@0/dist/web.js'
+
+  Typebot.initBubble({
+    typebot: "agente-digitallab-96q66dk",
+    previewMessage: { message: "Soy tu asistente virtual" },
+    theme: {
+      button: { backgroundColor: "#0042DA" },
+      chatWindow: { backgroundColor: "#F8F8F8" },
+    },
+  });
+</script>
+
+</body>
+</html>

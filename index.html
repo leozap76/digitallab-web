@@ -376,15 +376,14 @@
                 </div>
 
                 <div class="bg-slate-800 p-8 rounded-3xl border border-slate-700 shadow-2xl">
-                    <form action="https://formspree.io/f/xbdzryyk" method="POST" id="contactForm" class="space-y-4">
+           <form id="contactForm" class="space-y-4">
+    <input type="text" id="form-nombre" name="nombre" placeholder="Tu Nombre o Negocio" required
+           class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 focus:border-[#ff6b00] outline-none transition-all text-white">
     
-    <input type="text" name="nombre" placeholder="Tu Nombre o Negocio" required
-           class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 focus:border-blue-500 outline-none transition-all">
+    <textarea id="form-mensaje" name="mensaje" placeholder="¿Cómo podemos ayudarte?" rows="4" required
+              class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 focus:border-[#ff6b00] outline-none transition-all text-white"></textarea>
     
-    <textarea name="mensaje" id="form-msg" placeholder="¿Cómo podemos ayudarte?" rows="4" required
-              class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 focus:border-blue-500 outline-none transition-all"></textarea>
-    
-    <button type="submit" class="w-full btn-primary py-4 rounded-xl font-bold text-lg uppercase tracking-widest">
+    <button type="submit" class="w-full bg-[#ff6b00] text-black py-4 rounded-xl font-bold text-lg uppercase tracking-widest hover:scale-[1.02] transition-all">
         Enviar Consulta
     </button>
 </form>
@@ -403,12 +402,24 @@
         const menu = document.getElementById('mobile-menu');
         btn.onclick = () => menu.classList.toggle('hidden');
 
-        function selectPlan(plan) {
-            const msg = document.getElementById('form-msg');
-            msg.value = `Hola DigitalLab! Me gustaría consultar por el "${plan}".`;
-            document.getElementById('contacto').scrollIntoView({ behavior: 'smooth' });
-            msg.focus();
-        }
+      function selectPlan(plan) {
+    // 1. Capturamos el campo de mensaje del formulario
+    const campoMensaje = document.getElementById('form-mensaje'); // ID corregido de tu HTML
+    
+    // 2. Insertamos el texto sugerido según el plan elegido
+    campoMensaje.value = `Hola DigitalLab! Me interesa el "${plan}". ¿Podrían darme más info?`;
+    
+    // 3. Scroll suave hacia la sección de contacto
+    document.getElementById('contacto').scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+    });
+    
+    // 4. Ponemos el cursor en el campo de nombre para que empiecen a escribir ya
+    setTimeout(() => {
+        document.getElementById('form-nombre').focus();
+    }, 800); 
+}
     </script>
  <script>
 !function(f,b,e,v,n,t,s)
@@ -419,11 +430,37 @@ n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];
 s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', 'TU_ID_DE_PIXEL_AQUÍ');
+fbq('init', '4010721865841948');
 fbq('track', 'PageView');
 </script>
 <noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=TU_ID_DE_PIXEL_AQUÍ&ev=PageView&noscript=1"
+src="https://www.facebook.com/tr?id=4010721865841948&ev=PageView&noscript=1"
 /></noscript>
+
+<script>
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault(); // Evita que la página se recargue
+
+    // Obtener los datos del formulario
+    const nombre = document.getElementById('form-nombre').value;
+    const mensaje = document.getElementById('form-mensaje').value;
+    const numero = "542657780645"; // Tu número con código de país
+
+    // Armar el texto para WhatsApp
+    const texto = `Hola MenuYa! Mi nombre/negocio es: *${nombre}*. Mi consulta es: ${mensaje}`;
+    
+    // Codificar el texto para la URL
+    const mensajeCodificado = encodeURIComponent(texto);
+    
+    // Registrar el evento en el Pixel de Facebook si lo tienes instalado
+    if (typeof fbq !== 'undefined') {
+        fbq('track', 'Contact', { content_name: 'Consulta_Landing' });
+    }
+
+    // Abrir WhatsApp en una nueva pestaña
+    window.open(`https://wa.me/${numero}?text=${mensajeCodificado}`, '_blank');
+});
+</script>
+
 </body>
 </html>

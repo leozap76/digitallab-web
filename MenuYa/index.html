@@ -1,0 +1,314 @@
+<!-- 
+Palette Name: MenuYa Brand (Black & Orange)
+Colors: #000000 (Black), #ff6b00 (Orange), #22c55e (Green CTA)
+Narrative Plan:
+1. Hero: Hook with high contrast.
+2. Infographic Section: Data visualization of manual vs. digital efficiency.
+3. Agitation: Highlighting the "pain" of manual management.
+4. Solution: The 3 pillars with styled HTML icons.
+5. Pricing: Clear, bold offer.
+6. Footer: WhatsApp floating action.
+Confirmation: NEITHER Mermaid JS NOR SVG were used. Icons are Unicode or CSS-styled.
+-->
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MenuYa | Menú Digital & Pedidos WhatsApp</title>
+    <link rel="icon" type="image/webp" href="img/favicon-menuya.webp">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Outfit', sans-serif; background-color: #000000; color: #ffffff; }
+        .orange-glow { box-shadow: 0 0 30px rgba(255, 107, 0, 0.2); }
+        .green-pulse { animation: pulse 2s infinite; }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4); }
+            70% { box-shadow: 0 0 0 15px rgba(34, 197, 94, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+        }
+        .chart-container { 
+            position: relative; 
+            width: 100%; 
+            max-width: 600px; 
+            margin-left: auto; 
+            margin-right: auto; 
+            height: 300px; 
+            max-height: 350px; 
+        }
+        .styled-card { 
+            background: #0a0a0a; 
+            border: 1px solid rgba(255, 107, 0, 0.1); 
+            border-radius: 2rem; 
+        }
+        .icon-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 64px;
+            height: 64px;
+            background: #ff6b00;
+            color: #000000;
+            border-radius: 1.25rem;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+    </style>
+
+    <script>
+
+   <!-- pixel -->     
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1660747028687311');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1660747028687311&ev=PageView&noscript=1"
+/></noscript>
+
+</head>
+<body class="overflow-x-hidden selection:bg-[#ff6b00] selection:text-black">
+
+    <!-- Header -->
+    <nav class="fixed w-full z-50 bg-black/80 backdrop-blur-md border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <div class="w-10 h-10  rounded-xl flex items-center justify-center shadow-lg shadow-[#ff6b00]/20 overflow-hidden">
+    <img src="img/favicon-menuya.png" alt="Logo MenuYa" class="w-full h-full object-cover">
+</div>
+                <span class="text-2xl font-black tracking-tighter">Menu<span class="text-[#ff6b00]">Ya</span></span>
+            </div>
+            <a href="#pricing" class="bg-[#ff6b00] text-black px-6 py-2 rounded-full text-sm font-bold transition-all hover:scale-105 active:scale-95">
+                VER PRECIOS
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-40 pb-20 px-6">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div class="space-y-8">
+                <div class="inline-block px-4 py-1.5 rounded-full border border-[#ff6b00]/30 bg-[#ff6b00]/5 text-[#ff6b00] text-xs font-bold tracking-widest uppercase">
+                    🚀 Lanzamiento Oficial
+                </div>
+                <h1 class="text-6xl md:text-8xl font-black leading-tight">
+                    Tu Menú Digital. <br>
+                    <span class="text-[#ff6b00]">Más Orden.</span><br>
+                    Menos Estrés.
+                </h1>
+                <p class="text-xl text-gray-400 leading-relaxed max-w-lg">
+                    Deja de perder ventas por mensajes sin responder. Digitaliza tu carta hoy y recibe los pedidos listos para preparar.
+                </p>
+                <div class="pt-4">
+                  <a href="https://wa.me/542657780645?text=Hola!%20Quiero%20solicitar%20mis%207%20días%20de%20prueba%20gratis%20de%20MenuYa" 
+   target="_blank" 
+   onclick="fbq('track', 'Lead', {content_name: 'Prueba Gratis MenuYa'});" 
+   class="inline-block bg-[#22c55e] text-black px-10 py-5 rounded-2xl font-black text-xl transition-all transform hover:scale-105 green-pulse uppercase tracking-tight text-center">
+    QUIERO MIS 7 DÍAS GRATIS
+</a>
+                </div>
+            </div>
+            <div class="relative">
+                <div class="absolute inset-0 bg-[#ff6b00]/10 blur-[120px] rounded-full"></div>
+                <div class="relative orange-glow rounded-[3rem] overflow-hidden border-4 border-[#ff6b00]/20">
+                    <img src="img/captura.webp" alt="MenuYa Mockup" class="w-full">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Infographic Section (The Data) -->
+    <section class="py-24 px-6 bg-[#050505]">
+        <div class="max-w-7xl mx-auto space-y-20">
+            <div class="text-center space-y-4">
+                <h2 class="text-4xl md:text-6xl font-black">Por qué MenuYa se paga solo</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">Comparamos la eficiencia de la toma de pedidos tradicional vs. nuestra plataforma digital.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div class="styled-card p-10 space-y-6">
+                    <h3 class="text-2xl font-bold flex items-center gap-3">
+                        <span class="text-[#ff6b00]">⏱️</span> Tiempo de Respuesta
+                    </h3>
+                    <p class="text-sm text-gray-400">Los pedidos manuales tardan hasta 15 minutos en procesarse. Con MenuYa, el cliente completa su carrito en menos de 2 minutos.</p>
+                    <div class="chart-container">
+                        <canvas id="timeChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="styled-card p-10 space-y-6">
+                    <h3 class="text-2xl font-bold flex items-center gap-3">
+                        <span class="text-[#ff6b00]">📉</span> Margen de Error
+                    </h3>
+                    <p class="text-sm text-gray-400">Digitalizar tu menú reduce los errores en comandas hasta en un 90%, eliminando malentendidos por audios o textos confusos.</p>
+                    <div class="chart-container">
+                        <canvas id="errorChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pain Section -->
+    <section class="py-24 px-6">
+        <div class="max-w-4xl mx-auto text-center space-y-16">
+            <h2 class="text-4xl md:text-6xl font-black">¿El WhatsApp de tu local es un caos?</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="p-8 rounded-[2rem] bg-red-500/5 border border-red-500/10 text-left">
+                    <span class="text-4xl mb-4 block">❌</span>
+                    <p class="font-bold text-lg">Clientes esperando respuesta por 20 minutos.</p>
+                </div>
+                <div class="p-8 rounded-[2rem] bg-red-500/5 border border-red-500/10 text-left">
+                    <span class="text-4xl mb-4 block">❌</span>
+                    <p class="font-bold text-lg">Errores en las comandas por mensajes mal entendidos.</p>
+                </div>
+                <div class="p-8 rounded-[2rem] bg-red-500/5 border border-red-500/10 text-left">
+                    <span class="text-4xl mb-4 block">❌</span>
+                    <p class="font-bold text-lg">Precios desactualizados porque imprimir es caro.</p>
+                </div>
+            </div>
+            
+            <div class="pt-8">
+                <p class="text-2xl font-black text-[#ff6b00] uppercase italic tracking-tighter">
+                    Recupera el control de tu negocio hoy mismo.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pillars Section -->
+    <section class="py-24 px-6 bg-[#050505]">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div class="space-y-6 text-center">
+                <div class="icon-box mx-auto">QR</div>
+                <h3 class="text-2xl font-black">QR Inteligente</h3>
+                <p class="text-gray-400">Tus clientes escanean, eligen y piden en segundos sin descargar nada.</p>
+            </div>
+            <div class="space-y-6 text-center">
+                <div class="icon-box mx-auto">💬</div>
+                <h3 class="text-2xl font-black">Pedidos Limpios</h3>
+                <p class="text-gray-400">Recibes un mensaje estructurado: producto, cantidad, extras y dirección.</p>
+            </div>
+            <div class="space-y-6 text-center">
+                <div class="icon-box mx-auto">📱</div>
+                <h3 class="text-2xl font-black">Panel de Control</h3>
+                <p class="text-gray-400">Cambia precios y platos agotados al instante desde tu propio celular.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-24 px-6">
+        <div class="max-w-lg mx-auto p-12 styled-card border-2 border-[#ff6b00]/50 text-center space-y-8 orange-glow">
+            <div class="space-y-2">
+                <h2 class="text-3xl font-black">Todo esto por el costo de 2 pizzas al mes.</h2>
+                <div class="text-6xl font-black text-[#ff6b00]">$20.000 <span class="text-sm text-gray-500 font-medium">/ mes</span></div>
+            </div>
+            
+            <ul class="text-left space-y-4 py-8 border-y border-white/5">
+                <li class="flex items-center gap-3">✔️ Menú ilimitado</li>
+                <li class="flex items-center gap-3">✔️ Soporte por WhatsApp</li>
+                <li class="flex items-center gap-3">✔️ Actualizaciones en tiempo real</li>
+                <li class="flex items-center gap-3 font-bold text-[#ff6b00]">⭐ Bonus: Carga de primeros 10 platos gratis</li>
+            </ul>
+
+            <a href="https://wa.me/542657780645?text=Hola!%20Estoy%20listo%20para%20empezar%20con%20MenuYa.%20Quiero%20aprovechar%20la%20oferta%20de%20$20.000%20y%20el%20bonus%20de%20carga%20de%20platos." 
+   target="_blank" 
+   onclick="fbq('track', 'Lead', {content_name: 'Pricing_Compra'});" 
+   class="w-full inline-block bg-[#22c55e] text-black py-5 rounded-2xl font-black text-xl hover:scale-[1.02] transition-all text-center">
+    EMPEZAR PRUEBA GRATIS
+</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 text-center text-gray-600 text-xs border-t border-white/5 uppercase tracking-widest">
+        © 2026 MenuYa - Sistema de Pedidos Inteligentes
+    </footer>
+
+    <!-- Floating Button -->
+    <a href="https://wa.me/542657780645" class="fixed bottom-8 right-8 z-[100] group flex items-center gap-4">
+        <div class="bg-white text-black px-4 py-2 rounded-xl text-sm font-black opacity-0 group-hover:opacity-100 transition-all shadow-2xl">
+            ¿Tienes dudas?
+        </div>
+        <div class="w-16 h-16 bg-[#22c55e] rounded-full flex items-center justify-center shadow-2xl shadow-green-500/40 hover:scale-110 transition-all border-4 border-black">
+            <span class="text-3xl">💬</span>
+        </div>
+    </a>
+
+    <script>
+        window.onload = function() {
+            // Chart 1: Time Comparison
+            const ctxTime = document.getElementById('timeChart').getContext('2d');
+            new Chart(ctxTime, {
+                type: 'bar',
+                data: {
+                    labels: [['Gestión', 'Manual (WhatsApp)'], ['Gestión con', 'MenuYa']],
+                    datasets: [{
+                        label: 'Minutos por Pedido',
+                        data: [15, 2],
+                        backgroundColor: ['#333333', '#ff6b00'],
+                        borderRadius: 10
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            callbacks: {
+                                title: function(items) {
+                                    return items[0].label.join(' ');
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        y: { beginAtZero: true, grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#666' } },
+                        x: { grid: { display: false }, ticks: { color: '#fff' } }
+                    }
+                }
+            });
+
+            // Chart 2: Error Reduction
+            const ctxError = document.getElementById('errorChart').getContext('2d');
+            new Chart(ctxError, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Pedidos Correctos', 'Pedidos con Errores'],
+                    datasets: [{
+                        data: [98, 2],
+                        backgroundColor: ['#ff6b00', '#333333'],
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    cutout: '80%',
+                    plugins: {
+                        legend: { position: 'bottom', labels: { color: '#fff', padding: 20 } },
+                        tooltip: {
+                            callbacks: {
+                                title: function(items) {
+                                    return items[0].label;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        };
+    </script>
+</body>
+</html>

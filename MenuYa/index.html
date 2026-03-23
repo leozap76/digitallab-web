@@ -16,7 +16,7 @@ Confirmation: NEITHER Mermaid JS NOR SVG were used. Icons are Unicode or CSS-sty
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MenuYa | Menú Digital & Pedidos WhatsApp</title>
-    <link rel="icon" type="image/webp" href="img/favicon-menuya.webp">
+    <link rel="icon" type="image/x-icon" href="./img/favicon-menuya.webp">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;900&display=swap" rel="stylesheet">
@@ -124,6 +124,48 @@ src="https://www.facebook.com/tr?id=1660747028687311&ev=PageView&noscript=1"
             </div>
         </div>
     </section>
+
+    <section id="demo-form" class="py-20 bg-[#080808] border-t border-white/5">
+    <div class="max-w-xl mx-auto px-6">
+        <div class="bg-[#111] p-8 rounded-[2.5rem] border border-[#ff6b00]/20 shadow-2xl">
+            <div class="text-center mb-8">
+                <span class="bg-[#ff6b00]/10 text-[#ff6b00] px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-widest">Acceso Exclusivo</span>
+                <h2 class="text-3xl font-black text-white mt-4 tracking-tighter">Prueba el Demo Gratis</h2>
+                <p class="text-gray-400 mt-2 text-sm">Completa tus datos para ver cómo funciona MenuYa en tiempo real.</p>
+            </div>
+
+            <form id="lead-form" class="space-y-4">
+                <div>
+                    <label class="block text-[11px] font-bold text-[#ff6b00] uppercase tracking-widest mb-2 ml-1">Tu Nombre</label>
+                    <input type="text" id="lead-name" required placeholder="Ej: Carlos Gómez" 
+                           class="w-full bg-black border border-white/10 rounded-2xl px-5 py-4 text-white focus:border-[#ff6b00] outline-none transition-all">
+                </div>
+
+                <div>
+                    <label class="block text-[11px] font-bold text-[#ff6b00] uppercase tracking-widest mb-2 ml-1">Tipo de Comercio</label>
+                    <select id="lead-type" required class="w-full bg-black border border-white/10 rounded-2xl px-5 py-4 text-white focus:border-[#ff6b00] outline-none transition-all appearance-none">
+                        <option value="" disabled selected>Selecciona una opción</option>
+                        <option value="Rotisería">Rotisería</option>
+                        <option value="Restaurante">Restaurante</option>
+                        <option value="Casa de Comidas">Casa de Comidas</option>
+                        <option value="Pizzería">Pizzería</option>
+                        <option value="Otro">Otro</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-[11px] font-bold text-[#ff6b00] uppercase tracking-widest mb-2 ml-1">WhatsApp de contacto</label>
+                    <input type="tel" id="lead-phone" required placeholder="Ej: 5492657..." 
+                           class="w-full bg-black border border-white/10 rounded-2xl px-5 py-4 text-white focus:border-[#ff6b00] outline-none transition-all">
+                </div>
+
+                <button type="submit" class="w-full bg-[#ff6b00] text-black font-black py-5 rounded-2xl shadow-lg hover:shadow-[#ff6b00]/20 hover:-translate-y-1 transition-all uppercase tracking-widest mt-4">
+                    Ver Demo Ahora 🔥
+                </button>
+            </form>
+        </div>
+    </div>
+</section>
 
     <!-- Infographic Section (The Data) -->
     <section class="py-24 px-6 bg-[#050505]">
@@ -310,5 +352,28 @@ src="https://www.facebook.com/tr?id=1660747028687311&ev=PageView&noscript=1"
             });
         };
     </script>
+    <script>
+document.getElementById('lead-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    // 1. Obtenemos los datos
+    const nombre = document.getElementById('lead-name').value;
+    const comercio = document.getElementById('lead-type').value;
+    const telefono = document.getElementById('lead-phone').value;
+
+    // 2. (Opcional) Puedes enviar estos datos a tu propio WhatsApp para saber quién entró
+    const miWhatsApp = "542657780645"; // TU NÚMERO
+    const mensajeAdmin = `*NUEVO LEAD DEMO*%0A*Nombre:* ${nombre}%0A*Tipo:* ${comercio}%0A*WhatsApp:* ${telefono}`;
+    
+    // Abrimos el demo en una pestaña nueva
+    window.open("https://menu-ya.vercel.app/", "_blank");
+
+    // Opcional: Notificarte a ti mismo del interesado
+    // window.open(`https://wa.me/${miWhatsApp}?text=${mensajeAdmin}`, '_blank');
+
+    alert(`¡Hola ${nombre}! Te estamos redirigiendo al Demo.`);
+});
+</script>
+
 </body>
 </html>
